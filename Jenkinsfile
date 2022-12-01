@@ -55,7 +55,7 @@ pipeline{
             }
         }
         stage('6-buildingdocker'){
-            paralell{
+            parallel{
                 stage('1-dockerimage'){
                     steps{
                         sh 'logname'
