@@ -11,5 +11,24 @@ pipeline{
                 sh 'echo "demo job successful"'
             }
         }
+        stage('3- parallel jobs'){
+            parallel{
+                stage('1-subjob'){
+                    steps{
+                        sh 'du'
+                    }
+                }
+                stage('2-subjob2')[
+                    steps{
+                        sh 'top -n 2'
+                    }
+                ]
+            }
+            stage('4-pipelinecheck'){
+                steps{
+                    sh 'echo " done"'
+                }
+            }
+        }
     }
 }
