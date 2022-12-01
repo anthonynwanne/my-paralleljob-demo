@@ -37,11 +37,11 @@ pipeline{
                         sh 'top -n 2'
                     }
                 }
-                stage('2-artfactgen')[
+                stage('2-artfactgen'){
                     steps{
                         sh '`pwd`'
                     }
-                ]
+                }
                 stage('3-push2nexus'){
                     steps{
                         sh '`whoami`'
