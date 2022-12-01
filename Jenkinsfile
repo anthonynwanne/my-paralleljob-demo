@@ -15,14 +15,14 @@ pipeline{
             parallel{
                 stage('1-subjob'){
                     steps{
-                        sh 'du'
+                        sh 'lscpu'
                     }
                 }
-                stage('2-subjob2')[
+                stage('2-subjob2'){
                     steps{
                         sh 'top -n 2'
                     }
-                ]
+                }
             }
             stage('4-pipelinecheck'){
                 steps{
