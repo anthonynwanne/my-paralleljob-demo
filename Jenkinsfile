@@ -34,12 +34,12 @@ pipeline{
             parallel{
                 stage('1-code2marvin'){
                     steps{
-                        sh 'top -n 2'
+                        sh 'df -h'
                     }
                 }
                 stage('2-artfactgen'){
                     steps{
-                        sh '`pwd`'
+                        sh 'echo "my paralell job push to pipiline"'
                     }
                 }
                 stage('3-push2nexus'){
