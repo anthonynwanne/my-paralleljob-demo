@@ -30,5 +30,29 @@ pipeline{
                 sh 'echo "parallel job done"'
             }
         }
+        stage('5-marvinping'){
+            parallel{
+                stage('1-code2marvin'){
+                    steps{
+                        sh 'top -n 2'
+                    }
+                }
+                stage('2-artfactgen')[
+                    steps{
+                        sh '`pwd`'
+                    }
+                ]
+                stage('3-push2nexus'){
+                    steps[
+                        sh '`whoami`'
+                    ]
+                }
+            }
+        }
+        stage('5-ansibleintegration'){
+            steps[
+                sh 'll'
+            ]
+        }
     }
 }
