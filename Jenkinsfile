@@ -44,7 +44,7 @@ pipeline{
                 }
                 stage('3-push2nexus'){
                     steps{
-                        sh '`whoami`'
+                        sh 'whoami'
                     }
                 }
             }
