@@ -1,43 +1,47 @@
 pipeline{
     agent any
     stages{
-        stage('1-git clone'){
-            parallel{
-                steps{
-                    sh 'echo "welcome"'
-                }
-            }
-            stage('sub stage1'){
-                steps{
-                    sh 'touch pipeline'
-                }
-            }
-        }
-        stage('2-git pull'){
+        stage(1-'git repo'){
             steps{
-                sh 'df -h'
+                sh 'ls -a'
             }
         }
-        stage('3-main stage3'){
+        stage('2-parallel jos'){
             parallel{
-                steps{
-                    sh 'ls -a'
+                stage('sub job'){
+                    steps{
+                        sh 'll'
+                    }
+                }
+                stage('sub job2'){
+                    steps{
+                        sh '$(pwd)'
+                    }
                 }
             }
-            stage('sub stage3'){
+            stage('3- main'){
                 steps{
-                    sh 'll'
+                    sh 'echo "demo job successful"'
                 }
             }
-            stage('sub stage 3b'){
-                steps{
-                    sh 'echo "sub stage 3"'
+            stage('4-main'){
+                pararell{
+                    stage('sub parallejob'){
+                        steps{
+                            sh 'echo "thank you prof. Elvis"'
+                        }
+                    }
+                    stage('sub paralleljob2'){
+                        steps{
+                            sh 'top -n 2'
+                        }
+                    }
                 }
-            }
-        }
-        stage('4-pipeline check'){
-            steps{
-                sh '$(pwd)'
+                stage('finale stage'){
+                    steps{
+                        sh 'logname'
+                    }
+                }
             }
         }
     }
