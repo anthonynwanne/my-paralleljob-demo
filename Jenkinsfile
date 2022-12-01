@@ -43,16 +43,16 @@ pipeline{
                     }
                 ]
                 stage('3-push2nexus'){
-                    steps[
+                    steps{
                         sh '`whoami`'
-                    ]
+                    }
                 }
             }
         }
         stage('5-ansibleintegration'){
-            steps[
+            steps{
                 sh 'll'
-            ]
+            }
         }
     }
 }
