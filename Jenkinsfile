@@ -51,7 +51,7 @@ pipeline{
         }
         stage('5-ansibleintegration'){
             steps{
-                sh 'll'
+                sh 'll -lh'
             }
         }
     }
