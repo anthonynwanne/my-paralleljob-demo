@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage(1-'git repo'){
+        stage('1-git repo'){
             steps{
                 sh 'ls -a'
             }
