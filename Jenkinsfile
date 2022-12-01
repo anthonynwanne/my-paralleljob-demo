@@ -58,7 +58,7 @@ pipeline{
             parallel{
                 stage('1-dockerimage'){
                     steps{
-                        sh 'logname'
+                        sh 'du -m'
                     }
                 }
                 stage('2-dockercontainer'){
