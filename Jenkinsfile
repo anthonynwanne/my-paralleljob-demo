@@ -1,17 +1,17 @@
 pipeline{
     agent any
     stages{
-        stage('1-git repo'){
+        stage('1-gitrepo'){
             steps{
                 sh 'ls -a'
             }
         }
-        stage('2- main'){
+        stage('2-main'){
            steps{
                 sh 'echo "demo job successful"'
             }
         }
-        stage('3- parallel jobs'){
+        stage('3-parallel-jobs'){
             parallel{
                 stage('1-subjob'){
                     steps{
@@ -24,10 +24,10 @@ pipeline{
                     }
                 }
             }
-            stage('4-pipelinecheck'){
-                steps{
-                    sh 'echo " done"'
-                }
+        }
+        stage('4-jobdone'){
+            steps{
+                sh 'echo parallel job done'
             }
         }
     }
