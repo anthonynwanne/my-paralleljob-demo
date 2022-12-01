@@ -39,7 +39,7 @@ pipeline{
                 }
                 stage('2-artfactgen'){
                     steps{
-                        sh 'echo "my paralell job push to pipiline"'
+                        sh 'echo "my paralell job push to pipeline"'
                     }
                 }
                 stage('3-push2nexus'){
@@ -52,6 +52,35 @@ pipeline{
         stage('5-ansibleintegration'){
             steps{
                 sh 'cat /etc/passwd'
+            }
+        }
+        stage('6-buildingdocker'){
+            pararell{
+                stage('1-dockerimage'){
+                    steps{
+                        sh 'logname'
+                    }
+                }
+                stage('2-dockercontainer'){
+                    steps{
+                        sh 'free -m'
+                    }
+                }
+                stage('3-delpoy2dev'){
+                    steps{
+                        sh 'free -m'
+                    }
+                }
+                stage('4-kubernativeclustertest'){
+                    steps{
+                        sh 'echo "test successful"'
+                    }
+                }
+            }
+        }
+        stage('7-deploy2prod'){
+            steps{
+                sh 'echo "well done Engr. Anthony"'
             }
         }
     }
