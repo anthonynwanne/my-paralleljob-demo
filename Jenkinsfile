@@ -20,14 +20,14 @@ pipeline{
                 }
                 stage('2-subjob2'){
                     steps{
-                        sh 'top -n 2'
+                        sh 'echo "hello World"'
                     }
                 }
             }
         }
         stage('4-jobdone'){
             steps{
-                sh 'echo parallel job done'
+                sh 'echo "parallel job done"'
             }
         }
     }
