@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        label 'main'
+        label 'slave'
     }
     stages{
         stage('1-gitrepo'){
