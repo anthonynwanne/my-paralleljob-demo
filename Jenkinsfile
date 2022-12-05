@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent {
+        label 'master'
+    }
     stages{
         stage('1-gitrepo'){
             steps{
@@ -41,9 +43,6 @@ pipeline{
                     }
                 }
                 stage('2-artfactgen'){
-                    when {
-                        branch 'Test'
-                    }
                     steps{
                         sh 'echo "my paralell job push to pipeline"'
                     }
@@ -71,9 +70,6 @@ pipeline{
                     }
                 }
                 stage('2-dockercontainer'){
-                    when {
-                        branch 'Test'
-                    }
                     steps{
                         sh 'free -m'
                     }
