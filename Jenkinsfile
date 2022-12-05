@@ -7,6 +7,9 @@ pipeline{
             }
         }
         stage('2-main'){
+            agent {
+                label 'slave'
+            }
            steps{
                 sh 'echo "demo job successful"'
             }
@@ -53,6 +56,9 @@ pipeline{
             }
         }
         stage('5-ansibleintegration'){
+            agent {
+                label 'slave'
+            }
             steps{
                 sh 'cat /etc/passwd'
             }
