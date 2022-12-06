@@ -47,7 +47,7 @@ pipeline{
                         sh 'echo "my paralell job push to pipeline"'
                     }
                 }
-                stage('3-push2nexus'){
+                stage('3-plug2nexus'){
                     steps{
                         sh 'whoami'
                     }
