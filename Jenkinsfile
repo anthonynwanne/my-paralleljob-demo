@@ -25,7 +25,7 @@ pipeline{
                 }
             }
         }
-        stage('4-jobdone'){
+        stage('4-jobdemo'){
             steps{
                 sh 'echo "parallel job done"'
             }
